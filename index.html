@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cointax Financial Services LLP | Tax, GST, MCA & International Advisory</title>
+    <meta name="description" content="Cointax Financial Services LLP — Expert advisory for Income Tax, GST, MCA compliance in India and Company Incorporation, Bookkeeping & Tax Filing internationally.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #e53e3e;
+            --accent-light: #fc8181;
+            --gold: #d69e2e;
+            --bg: #ffffff;
+            --bg-alt: #f7fafc;
+            --bg-dark: #1a202c;
+            --text: #2d3748;
+            --text-light: #718096;
+            --text-white: #f7fafc;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: box-shadow 0.3s;
+        }
+        .navbar.scrolled { box-shadow: var(--shadow); }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: background 0.2s !important;
+        }
+        .nav-cta:hover { background: var(--primary-light) !important; }
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; background: none; border: none; }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 160px 24px 100px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #2b6cb0 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .badge {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-white { background: white; color: var(--primary); }
+        .btn-white:hover { background: #edf2f7; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+        .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #c53030; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+        /* ── SECTIONS ── */
+        .section { padding: 100px 24px; }
+        .section-alt { background: var(--bg-alt); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .section-header p { color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .overline {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        /* ── SERVICES GRID ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+        .card-india::before { background: linear-gradient(90deg, #ff9933, #ffffff, #138808); }
+        .card-intl::before { background: linear-gradient(90deg, var(--primary), var(--accent)); }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .icon-tax { background: #fff5f5; color: var(--accent); }
+        .icon-gst { background: #fffff0; color: var(--gold); }
+        .icon-mca { background: #ebf8ff; color: var(--primary); }
+        .icon-incorp { background: #f0fff4; color: #38a169; }
+        .icon-book { background: #faf5ff; color: #805ad5; }
+        .icon-intltax { background: #fff5f5; color: #e53e3e; }
+        .service-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+        .service-card p { color: var(--text-light); margin-bottom: 20px; font-size: 0.95rem; }
+        .service-list { list-style: none; }
+        .service-list li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: var(--text);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .service-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+        /* ── WHY US ── */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        .why-card {
+            text-align: center;
+            padding: 32px;
+        }
+        .why-card .num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .why-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--primary); }
+        .why-card p { color: var(--text-light); font-size: 0.9rem; }
+
+        /* ── BLOG ── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .blog-thumb {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        .blog-content { padding: 24px; }
+        .blog-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .blog-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--primary); }
+        .blog-content p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; }
+        .blog-date { font-size: 0.8rem; color: var(--text-light); }
+
+        /* ── CONTACT ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .contact-info h3 { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+        .contact-info p { color: var(--text-light); margin-bottom: 32px; }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .contact-detail .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-alt);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .contact-detail span { font-size: 0.95rem; color: var(--text); }
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+            background: var(--bg-alt);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+        }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+        .btn-submit:hover { background: var(--primary-light); }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--bg-dark);
+            color: var(--text-white);
+            padding: 60px 24px 30px;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+        .footer p { font-size: 0.9rem; color: #a0aec0; line-height: 1.7; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #a0aec0; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid #2d3748;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 24px;
+                box-shadow: var(--shadow-lg);
+                gap: 16px;
+            }
+            .hamburger { display: block; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero { padding: 130px 24px 80px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .section { padding: 60px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Cointax<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#india">India</a></li>
+                <li><a href="#international">International</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badges">
+            <span class="badge">Income Tax</span>
+            <span class="badge">GST</span>
+            <span class="badge">MCA Compliance</span>
+            <span class="badge">International Tax</span>
+        </div>
+        <h1>Finance & Compliance, Simplified.</h1>
+        <p>Expert advisory for Indian tax, regulatory compliance, and international business setup — all under one roof.</p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn btn-white">Free Consultation</a>
+            <a href="#services" class="btn btn-outline">View Services</a>
+        </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="overline">What We Do</div>
+                <h2>Comprehensive Financial Services</h2>
+                <p>From Indian tax compliance to international company setup — we handle the numbers so you can focus on growth.</p>
+            </div>
+            <div class="services-grid" id="india">
+                <!-- INDIAN SERVICES -->
+                <div class="service-card card-india">
+                    <div class="service-icon icon-tax">&#8377;</div>
+                    <h3>Income Tax</h3>
+                    <p>End-to-end income tax services for individuals, HUFs, firms, and companies.</p>
+                    <ul class="service-list">
+                        <li>ITR filing for all categories</li>
+                        <li>Tax planning & advisory</li>
+                        <li>TDS/TCS compliance & returns</li>
+                        <li>Income tax assessments & appeals</li>
+                        <li>Advance tax computation</li>
+                        <li>Capital gains advisory</li>
+                        <li>Tax audit (Section 44AB)</li>
+                    </ul>
+                </div>
+
+                <div class="service-card card-india">
+                    <div class="service-icon icon-gst">&#9733;</div>
+                    <h3>GST</h3>
+                    <p>Complete GST lifecycle management — from registration to audit and refunds.</p>
+                    <ul class="service-list">
+                        <li>GST registration & migration</li>
+                        <li>Monthly/quarterly return filing (GSTR-1, 3B, 9, 9C)</li>
+                        <li>E-way bill & e-invoicing setup</li>
+                        <li>Input tax credit reconciliation</li>
+                        <li>GST audit & assessment support</li>
+                        <li>GST refund claims</li>
+                        <li>Anti-profiteering advisory</li>
+                    </ul>
+                </div>
+
+                <div class="service-card card-india">
+                    <div class="service-icon icon-mca">&#9878;</div>
+                    <h3>MCA & ROC Compliance</h3>
+                    <p>Company law compliance and ROC filings to keep your company in good standing.</p>
+                    <ul class="service-list">
+                        <li>Company incorporation (Pvt Ltd, LLP, OPC)</li>
+                        <li>Annual ROC filings (AOC-4, MGT-7)</li>
+                        <li>Director KYC & DIN services</li>
+                        <li>Board resolutions & minutes</li>
+                        <li>Share transfer & allotment</li>
+                        <li>Charge creation & modification</li>
+                        <li>Strike-off & winding up</li>
+                    </ul>
+                </div>
+
+                <!-- INTERNATIONAL SERVICES -->
+                <div class="service-card card-intl" id="international">
+                    <div class="service-icon icon-incorp">&#127758;</div>
+                    <h3>International Company Incorporation</h3>
+                    <p>Set up your business anywhere in the world with end-to-end incorporation support.</p>
+                    <ul class="service-list">
+                        <li>US LLC & C-Corp formation</li>
+                        <li>UK Ltd company setup</li>
+                        <li>Singapore, Dubai & Hong Kong incorporation</li>
+                        <li>Registered agent & virtual office</li>
+                        <li>EIN/Tax ID registration</li>
+                        <li>Bank account opening assistance</li>
+                        <li>Compliance calendar setup</li>
+                    </ul>
+                </div>
+
+                <div class="service-card card-intl">
+                    <div class="service-icon icon-book">&#128218;</div>
+                    <h3>International Bookkeeping</h3>
+                    <p>Accurate, timely bookkeeping aligned with international accounting standards.</p>
+                    <ul class="service-list">
+                        <li>Monthly bookkeeping & reconciliation</li>
+                        <li>Accounts payable & receivable management</li>
+                        <li>Payroll processing</li>
+                        <li>Financial statement preparation</li>
+                        <li>Multi-currency accounting</li>
+                        <li>QuickBooks, Xero & Zoho Books support</li>
+                        <li>Management reports & dashboards</li>
+                    </ul>
+                </div>
+
+                <div class="service-card card-intl">
+                    <div class="service-icon icon-intltax">&#128196;</div>
+                    <h3>International Tax Filing</h3>
+                    <p>Cross-border tax compliance and filing across multiple jurisdictions.</p>
+                    <ul class="service-list">
+                        <li>US federal & state tax returns</li>
+                        <li>UK self-assessment & corporation tax</li>
+                        <li>VAT/GST filing (UK, EU, Australia)</li>
+                        <li>Transfer pricing documentation</li>
+                        <li>DTAA benefit advisory</li>
+                        <li>FBAR & FATCA compliance</li>
+                        <li>Cross-border structuring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="overline">Why Cointax</div>
+                <h2>Numbers That Speak</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="num">500+</div>
+                    <h3>Clients Served</h3>
+                    <p>Across India and internationally, from startups to established enterprises.</p>
+                </div>
+                <div class="why-card">
+                    <div class="num">100%</div>
+                    <h3>Compliance Rate</h3>
+                    <p>Zero missed deadlines. Every filing on time, every year.</p>
+                </div>
+                <div class="why-card">
+                    <div class="num">10+</div>
+                    <h3>Countries</h3>
+                    <p>International incorporation and tax filing across multiple jurisdictions.</p>
+                </div>
+                <div class="why-card">
+                    <div class="num">24h</div>
+                    <h3>Response Time</h3>
+                    <p>Guaranteed response within 24 hours on all queries and filings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="section" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <div class="overline">Insights</div>
+                <h2>Tax Updates & Articles</h2>
+                <p>Stay informed with the latest changes in tax laws, compliance updates, and advisory insights.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-thumb" style="background: linear-gradient(135deg, #e53e3e, #c53030);">&#8377;</div>
+                    <div class="blog-content">
+                        <div class="blog-tag">Income Tax</div>
+                        <h3>Key Changes in ITR Forms for AY 2026-27</h3>
+                        <p>A comprehensive guide to the new ITR form changes, updated schedules, and reporting requirements for the current assessment year.</p>
+                        <div class="blog-date">Coming Soon</div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-thumb" style="background: linear-gradient(135deg, #d69e2e, #b7791f);">&#9733;</div>
+                    <div class="blog-content">
+                        <div class="blog-tag">GST</div>
+                        <h3>GST Annual Return Filing: Common Mistakes to Avoid</h3>
+                        <p>Learn about the most frequent errors businesses make while filing GSTR-9 and GSTR-9C, and how to avoid them.</p>
+                        <div class="blog-date">Coming Soon</div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-thumb" style="background: linear-gradient(135deg, #38a169, #276749);">&#127758;</div>
+                    <div class="blog-content">
+                        <div class="blog-tag">International</div>
+                        <h3>US LLC vs C-Corp: Which is Right for Indian Founders?</h3>
+                        <p>A detailed comparison of LLC and C-Corp structures for Indian entrepreneurs looking to expand to the United States.</p>
+                        <div class="blog-date">Coming Soon</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="overline">Get in Touch</div>
+                <h2>Let's Talk Numbers</h2>
+                <p>Have a question or need advisory? Reach out and we'll get back to you within 24 hours.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Whether you need help with Indian tax compliance or setting up a business internationally, we're here to help.</p>
+                    <div class="contact-detail">
+                        <div class="icon">&#9993;</div>
+                        <span>contact@cointaxfinance.in</span>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">&#9742;</div>
+                        <span>+91 XXXXX XXXXX</span>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">&#128205;</div>
+                        <span>New Delhi, India</span>
+                    </div>
+                    <div style="margin-top: 32px; padding: 24px; background: white; border-radius: 12px; border: 1px solid var(--border);">
+                        <h4 style="font-size: 0.95rem; margin-bottom: 8px; color: var(--primary);">Office Hours</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">
+                            Monday – Friday: 10:00 AM – 7:00 PM IST<br>
+                            Saturday: 10:00 AM – 2:00 PM IST<br>
+                            Sunday: Closed
+                        </p>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formsubmit.co/cointaxfinance@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Contact from Cointax Website">
+                    <input type="hidden" name="_next" value="https://www.cointaxfinance.com">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="text" name="_honey" style="display:none">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="first_name" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="last_name" placeholder="Doe">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="john@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Service Interested In</label>
+                        <select name="service" required>
+                            <option value="">Select a service</option>
+                            <optgroup label="India">
+                                <option value="income-tax">Income Tax</option>
+                                <option value="gst">GST</option>
+                                <option value="mca">MCA & ROC Compliance</option>
+                            </optgroup>
+                            <optgroup label="International">
+                                <option value="incorporation">Company Incorporation</option>
+                                <option value="bookkeeping">Bookkeeping</option>
+                                <option value="intl-tax">Tax Filing</option>
+                            </optgroup>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" placeholder="Tell us about your requirements..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4 style="font-size: 1.3rem; margin-bottom: 16px;">Cointax<span style="color: var(--accent);">.</span> Financial Services LLP</h4>
+                <p>Expert financial advisory and compliance services for businesses in India and across the globe. We simplify the complex world of tax, compliance, and international business setup.</p>
+            </div>
+            <div>
+                <h4>India Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#india">Income Tax</a></li>
+                    <li><a href="#india">GST</a></li>
+                    <li><a href="#india">MCA Compliance</a></li>
+                    <li><a href="#india">Tax Audit</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>International</h4>
+                <ul class="footer-links">
+                    <li><a href="#international">Company Incorporation</a></li>
+                    <li><a href="#international">Bookkeeping</a></li>
+                    <li><a href="#international">Tax Filing</a></li>
+                    <li><a href="#international">Transfer Pricing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Cointax Financial Services LLP. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
