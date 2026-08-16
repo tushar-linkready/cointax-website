@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cointax Financial Services LLP | Tax, GST, MCA & International Advisory</title>
     <meta name="description" content="Cointax Financial Services LLP — Expert advisory for Income Tax, GST, MCA compliance in India and Company Incorporation, Bookkeeping & Tax Filing internationally.">
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link rel="icon" type="image/svg+xml" href="favicon.svg">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-        <link rel="apple-touch-icon" sizes="512x512" href="favicon-512.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="favicon-512.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -223,6 +223,8 @@
         .icon-incorp { background: #f0fff4; color: #38a169; }
         .icon-book { background: #faf5ff; color: #805ad5; }
         .icon-intltax { background: #fff5f5; color: #e53e3e; }
+        .icon-model { background: #fffaf0; color: #dd6b20; }
+        .card-model::before { background: linear-gradient(90deg, #dd6b20, #d69e2e); }
         .service-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
         .service-card p { color: var(--text-light); margin-bottom: 20px; font-size: 0.95rem; }
         .service-list { list-style: none; }
@@ -380,8 +382,8 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 32px;
             margin-bottom: 40px;
         }
         .footer h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
@@ -401,6 +403,7 @@
         }
 
         /* ── RESPONSIVE ── */
+        .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: center; max-width: 900px; margin: 0 auto; }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .nav-links.active {
@@ -424,6 +427,7 @@
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .form-row { grid-template-columns: 1fr; }
             .section { padding: 60px 24px; }
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
         }
     </style>
 </head>
@@ -435,9 +439,9 @@
             <a href="#" class="logo">Cointax<span>.</span></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#india">India</a></li>
+                <li><a href="#financial-modeling">Financial Modeling</a></li>
                 <li><a href="#international">International</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
             </ul>
             <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')">&#9776;</button>
@@ -451,9 +455,11 @@
             <span class="badge">GST</span>
             <span class="badge">MCA Compliance</span>
             <span class="badge">International Tax</span>
+            <span class="badge">Financial Modeling</span>
+            <span class="badge">FP&amp;A</span>
         </div>
-        <h1>Finance & Compliance, Simplified.</h1>
-        <p>Expert advisory for Indian tax, regulatory compliance, and international business setup — all under one roof.</p>
+        <h1>Finance, Compliance & Strategy — Simplified.</h1>
+        <p>Expert advisory for Indian tax compliance, international business setup, and investor-ready financial modeling — all under one roof.</p>
         <div class="hero-btns">
             <a href="#contact" class="btn btn-white">Free Consultation</a>
             <a href="#services" class="btn btn-outline">View Services</a>
@@ -564,6 +570,64 @@
         </div>
     </section>
 
+    <!-- FINANCIAL MODELING -->
+    <section class="section section-alt" id="financial-modeling">
+        <div class="container">
+            <div class="section-header">
+                <div class="overline">For Startups, Investors & Growing Businesses</div>
+                <h2>Financial Modeling & Strategic Advisory</h2>
+                <p>Investor-ready financial models, real estate underwriting, and strategic business analysis — built by a CA with international client experience.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card card-model">
+                    <div class="service-icon icon-model">&#128200;</div>
+                    <h3>Startup & Investor Models</h3>
+                    <p>Fundraising-ready financial models that give investors the clarity they need to say yes.</p>
+                    <ul class="service-list">
+                        <li>3-statement integrated financial models</li>
+                        <li>Revenue & expense projections (3–5 year)</li>
+                        <li>Pitch deck financial slides</li>
+                        <li>Unit economics: LTV, CAC, payback period</li>
+                        <li>Scenario & sensitivity analysis</li>
+                        <li>Seed to Series A/B financial packages</li>
+                        <li>Cap table modeling</li>
+                    </ul>
+                </div>
+                <div class="service-card card-model">
+                    <div class="service-icon icon-model">&#127968;</div>
+                    <h3>Real Estate Financial Modeling</h3>
+                    <p>Detailed underwriting and return analysis for residential, commercial, and mixed-use properties.</p>
+                    <ul class="service-list">
+                        <li>Acquisition underwriting & IRR analysis</li>
+                        <li>Cash flow waterfall models</li>
+                        <li>Rental yield & cap rate analysis</li>
+                        <li>Development feasibility models</li>
+                        <li>Debt structuring & loan sizing</li>
+                        <li>Investor return summaries (LP/GP splits)</li>
+                        <li>Multi-property portfolio analysis</li>
+                    </ul>
+                </div>
+                <div class="service-card card-model">
+                    <div class="service-icon icon-model">&#128202;</div>
+                    <h3>FP&amp;A &amp; Strategic Analysis</h3>
+                    <p>Ongoing financial planning and management reporting for growing businesses.</p>
+                    <ul class="service-list">
+                        <li>Budget vs. actual variance analysis</li>
+                        <li>KPI dashboards & management reports</li>
+                        <li>Business valuation (DCF, comparable)</li>
+                        <li>M&amp;A financial due diligence support</li>
+                        <li>Strategic business analysis & advisory</li>
+                        <li>Break-even & profitability analysis</li>
+                        <li>Monthly financial reporting packages</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top: 40px;">
+                <a href="#contact" class="btn btn-primary">Discuss Your Modeling Needs</a>
+            </div>
+        </div>
+    </section>
+
     <!-- WHY US -->
     <section class="section section-alt">
         <div class="container">
@@ -596,6 +660,39 @@
         </div>
     </section>
 
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="overline">Who We Are</div>
+                <h2>Led by a Qualified Chartered Accountant</h2>
+                <p>Cointax is built on deep expertise, not just software — giving you a real advisor you can speak to, not a chatbot.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: center; max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <div style="width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 4rem;">👨‍💼</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 4px;">Tushar Arora</h3>
+                    <p style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">Chartered Accountant</p>
+                    <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 4px;">FCA | New Delhi, India</p>
+                </div>
+                <div>
+                    <p style="font-size: 1.05rem; color: var(--text); margin-bottom: 20px; line-height: 1.8;">
+                        With over 5 years of experience as a Chartered Accountant, I founded Cointax to bridge the gap between high-quality financial advisory and accessible service — for both Indian businesses and international clients.
+                    </p>
+                    <p style="font-size: 1.05rem; color: var(--text); margin-bottom: 24px; line-height: 1.8;">
+                        My work spans Indian tax compliance, cross-border structuring, financial modeling for startups and real estate investors, and FP&amp;A for growing businesses across the US, UK, and beyond. I've worked directly with founders, investors, and SMEs — not just filing returns, but building the financial clarity that drives better decisions.
+                    </p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <span style="background: var(--bg-alt); border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 500; color: var(--primary);">🇮🇳 Indian Tax & Compliance</span>
+                        <span style="background: var(--bg-alt); border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 500; color: var(--primary);">🇺🇸 US Tax & Bookkeeping</span>
+                        <span style="background: var(--bg-alt); border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 500; color: var(--primary);">📊 Financial Modeling</span>
+                        <span style="background: var(--bg-alt); border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 500; color: var(--primary);">🏢 Real Estate Finance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- BLOG -->
     <section class="section" id="blog">
         <div class="container">
@@ -610,8 +707,8 @@
                     <div class="blog-content">
                         <div class="blog-tag">Income Tax</div>
                         <h3>Key Changes in ITR Forms for AY 2026-27</h3>
-                        <p>A comprehensive guide to the new ITR form changes, updated schedules, and reporting requirements for the current assessment year.</p>
-                        <div class="blog-date">Coming Soon</div>
+                        <p>The ITR forms for AY 2026-27 bring significant changes — new schedules for virtual digital assets, revised capital gains reporting post the Finance Act amendments, and tighter disclosure requirements for foreign assets. Here's what you need to know before filing.</p>
+                        <div class="blog-date">July 2026</div>
                     </div>
                 </div>
                 <div class="blog-card">
@@ -619,17 +716,17 @@
                     <div class="blog-content">
                         <div class="blog-tag">GST</div>
                         <h3>GST Annual Return Filing: Common Mistakes to Avoid</h3>
-                        <p>Learn about the most frequent errors businesses make while filing GSTR-9 and GSTR-9C, and how to avoid them.</p>
-                        <div class="blog-date">Coming Soon</div>
+                        <p>GSTR-9 errors can trigger notices and block input tax credit claims. The most frequent mistakes — ITC mismatches between GSTR-2B and books, incorrect HSN reporting, and missed amendments — are entirely avoidable with the right reconciliation process in place.</p>
+                        <div class="blog-date">June 2026</div>
                     </div>
                 </div>
                 <div class="blog-card">
-                    <div class="blog-thumb" style="background: linear-gradient(135deg, #38a169, #276749);">&#127758;</div>
+                    <div class="blog-thumb" style="background: linear-gradient(135deg, #dd6b20, #c05621);">&#128200;</div>
                     <div class="blog-content">
-                        <div class="blog-tag">International</div>
-                        <h3>US LLC vs C-Corp: Which is Right for Indian Founders?</h3>
-                        <p>A detailed comparison of LLC and C-Corp structures for Indian entrepreneurs looking to expand to the United States.</p>
-                        <div class="blog-date">Coming Soon</div>
+                        <div class="blog-tag">Financial Modeling</div>
+                        <h3>What Investors Actually Look for in a Startup Financial Model</h3>
+                        <p>Most startup financial models get rejected not because the numbers are wrong, but because they don't answer the questions investors are actually asking — unit economics, path to profitability, and what happens in a downside scenario. Here's how to build one that gets taken seriously.</p>
+                        <div class="blog-date">August 2026</div>
                     </div>
                 </div>
             </div>
@@ -654,7 +751,7 @@
                     </div>
                     <div class="contact-detail">
                         <div class="icon">&#9742;</div>
-                        <span>+91 XXXXX XXXXX</span>
+                        <span><a href="#contact" style="color: var(--primary); text-decoration: none; font-weight: 500;">Request a callback →</a></span>
                     </div>
                     <div class="contact-detail">
                         <div class="icon">&#128205;</div>
@@ -698,15 +795,22 @@
                         <label>Service Interested In</label>
                         <select name="service" required>
                             <option value="">Select a service</option>
-                            <optgroup label="India">
-                                <option value="income-tax">Income Tax</option>
-                                <option value="gst">GST</option>
-                                <option value="mca">MCA & ROC Compliance</option>
+                            <optgroup label="Financial Modeling">
+                                <option value="startup-model">Startup / Investor Financial Model</option>
+                                <option value="real-estate-model">Real Estate Financial Model</option>
+                                <option value="fpa">FP&A / Management Reporting</option>
+                                <option value="valuation">Business Valuation / DCF</option>
+                                <option value="strategic-analysis">Strategic Business Analysis</option>
                             </optgroup>
                             <optgroup label="International">
                                 <option value="incorporation">Company Incorporation</option>
                                 <option value="bookkeeping">Bookkeeping</option>
                                 <option value="intl-tax">Tax Filing</option>
+                            </optgroup>
+                            <optgroup label="India">
+                                <option value="income-tax">Income Tax</option>
+                                <option value="gst">GST</option>
+                                <option value="mca">MCA & ROC Compliance</option>
                             </optgroup>
                             <option value="other">Other</option>
                         </select>
@@ -738,6 +842,15 @@
                 </ul>
             </div>
             <div>
+                <h4>Financial Modeling</h4>
+                <ul class="footer-links">
+                    <li><a href="#financial-modeling">Startup Models</a></li>
+                    <li><a href="#financial-modeling">Real Estate Finance</a></li>
+                    <li><a href="#financial-modeling">FP&A & Dashboards</a></li>
+                    <li><a href="#financial-modeling">Business Valuation</a></li>
+                </ul>
+            </div>
+            <div>
                 <h4>International</h4>
                 <ul class="footer-links">
                     <li><a href="#international">Company Incorporation</a></li>
@@ -749,7 +862,7 @@
             <div>
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                     <li><a href="#">Privacy Policy</a></li>
